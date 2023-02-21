@@ -1,0 +1,148 @@
+@use './colors' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 62.5%;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+body {
+	font-size: 3rem;
+	font-family: 'Open Sans', sans-serif;
+	overflow-y: hidden;
+}
+
+.nav {
+	&__box {
+		position: fixed;
+		top: 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+		transform: translate(-200%);
+		background-color: $main-light;
+		z-index: 100;
+		transition: transform 0.3s;
+	}
+
+	&__box--active {
+		transform: translate(0);
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__link {
+		display: block;
+		padding: 0.5em 1em;
+		margin-bottom: 0.5em;
+		font-size: 2rem;
+		color: $text-color;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__list--inner {
+		display: none;
+	}
+
+	&__list--active {
+		display: block;
+	}
+
+	&__btn {
+		position: fixed;
+		top: 0;
+		right: 0;
+		margin: 1em 1.5em;
+		width: 50px;
+		height: 50px;
+		z-index: 2000;
+		background: none;
+		border: none;
+		cursor: pointer;
+
+		&-bars {
+			position: relative;
+			height: 5px;
+			background-color: $contrast-color;
+			border-radius: 5px;
+
+			&::before,
+			&::after {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: $contrast-color;
+				border-radius: 5px;
+				content: '';
+			}
+
+			&::before {
+				top: -15px;
+			}
+
+			&::after {
+				top: 15px;
+			}
+		}
+	}
+}
+
+.header {
+	position: relative;
+	background-image: url('../img/header-mini.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&::before {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		content: '';
+	}
+
+	&__text {
+		padding: 0.5em;
+		text-align: center;
+		z-index: 10;
+	}
+
+	&__heading {
+		color: $contrast-color;
+		font-size: 3.6rem;
+		text-transform: uppercase;
+		margin-bottom: 0.5em;
+	}
+
+	&__desc {
+		font-size: 2.4rem;
+		color: $text-color;
+	}
+}
