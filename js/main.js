@@ -8,6 +8,7 @@ const body = document.body
 
 btnOffers.addEventListener('click', () => {
 	innerList.classList.toggle('nav__list--active')
+	btnOffers.classList.toggle('nav__link--active')
 })
 
 navBtn.addEventListener('click', () => {

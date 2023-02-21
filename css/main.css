@@ -26,14 +26,12 @@ body {
 .nav__box {
   position: fixed;
   top: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  transform: translate(-200%);
+  width: 70%;
+  padding: 0.5em;
   background-color: #353941;
-  z-index: 100;
+  transform: translate(-200%);
   transition: transform 0.3s;
+  z-index: 100;
 }
 .nav__box--active {
   transform: translate(0);
@@ -43,16 +41,16 @@ body {
 }
 .nav__link {
   display: block;
-  padding: 0.5em 1em;
-  margin-bottom: 0.5em;
-  font-size: 2rem;
+  padding: 0.25em 0.5em;
+  margin-bottom: 0.25em;
+  font-size: 1.6rem;
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
 }
-.nav__link:last-child {
-  margin-bottom: 0;
+.nav__link-active {
+  background-color: #90B8F8;
 }
 .nav__list--inner {
   display: none;
@@ -64,8 +62,8 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 75px;
-  height: 75px;
+  width: 65px;
+  height: 65px;
   padding: 1.5em;
   z-index: 2000;
   background: none;
@@ -74,7 +72,7 @@ body {
 }
 .nav__btn-bars {
   position: relative;
-  height: 5px;
+  height: 3px;
   background-color: #5F85DB;
   border-radius: 5px;
 }
